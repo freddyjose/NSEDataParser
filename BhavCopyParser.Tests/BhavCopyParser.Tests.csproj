@@ -45,4 +45,8 @@
     <ProjectReference Include="..\BhavCopyParser\BhavCopyParser.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="DataFolder\" />
+  </ItemGroup>
+
 </Project>
