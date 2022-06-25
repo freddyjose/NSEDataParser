@@ -8,7 +8,7 @@ namespace BhavCopyParser.DataModels.EquityData
 {
     public class OHLC
     {
-        public OHLC(string open, string high, string low, string close, string volume, string date, string numberOfTrades)
+        public OHLC(string open, string high, string low, string close, string volume, string date, string numberOfTrades, string tradedQty, string tradedVal)
         {
             Open = Convert.ToDouble(open);
             High = Convert.ToDouble(high);
@@ -17,6 +17,7 @@ namespace BhavCopyParser.DataModels.EquityData
             Volume = Convert.ToDouble(volume);
             Date = date;
             NumberOfTrades = Convert.ToInt64(numberOfTrades);
+            VWAP = Convert.ToDouble(tradedVal) / Convert.ToUInt32(tradedQty);
         }
 
         public string Date { get; set; }

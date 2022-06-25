@@ -45,7 +45,7 @@ namespace BhavCopyParser.BhavCopy.EquityBhavCopy
                                 string dateString = DateConverter.GetDBFriendlyDate(row[10]);
                                 if (symbolInConsideration != retVal.data[currentPos].Key)
                                     throw new ArgumentException("Error in inputs");
-                                OHLC ohlc = new OHLC(row[2], row[3], row[4], row[5], row[8], dateString, row[11]);
+                                OHLC ohlc = new OHLC(row[2], row[3], row[4], row[5], row[8], dateString, row[11], row[8], row[9]);
                                 retVal.data[currentPos].Value.Add(ohlc);
                                 currentPos++;
                             }

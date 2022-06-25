@@ -40,6 +40,7 @@ namespace BhavCopyParser.Tests.EquityBhavCopy
             Assert.AreEqual("2022-06-24", result.data[0].Value[0].Date);
             Assert.AreEqual(6571866, result.data[0].Value[0].Volume);
             Assert.AreEqual(258066, result.data[0].Value[0].NumberOfTrades);
+            Assert.AreEqual(2491.9724, result.data[0].Value[0].VWAP, 0.01);
         }
     }
 }
