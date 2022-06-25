@@ -8,11 +8,27 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="DataFolder\EquityBhavCopy\cm22JUN2022bhav.csv.zip" />
+    <None Remove="DataFolder\EquityBhavCopy\cm23JUN2022bhav.csv.zip" />
     <None Remove="DataFolder\EquityBhavCopy\cm24JUN2022bhav.csv.zip" />
+    <None Remove="DataFolder\EquityBhavCopy\cm24MAY2022bhav.csv.zip" />
+    <None Remove="DataFolder\EquityBhavCopy\cm25MAY2022bhav.csv.zip" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="DataFolder\EquityBhavCopy\cm22JUN2022bhav.csv.zip">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DataFolder\EquityBhavCopy\cm23JUN2022bhav.csv.zip">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="DataFolder\EquityBhavCopy\cm24JUN2022bhav.csv.zip">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DataFolder\EquityBhavCopy\cm24MAY2022bhav.csv.zip">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DataFolder\EquityBhavCopy\cm25MAY2022bhav.csv.zip">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
