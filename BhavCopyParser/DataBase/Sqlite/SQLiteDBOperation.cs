@@ -38,23 +38,22 @@ namespace BhavCopyParser.DataBase.Sqlite
             return result;
         }
 
-        public bool ExecuteInsertTransaction(List<string> commands)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool InitializeDBFile(List<string> tableNames)
+        /// <summary>
+        /// executes a series of sql commands
+        /// </summary>
+        /// <param name="commands">list of commands to be executed</param>
+        /// <returns></returns>
+        public bool ExecuteTransaction(List<string> commands)
         {
             bool success = false;
             using (SqliteConnection dbConn = new SqliteConnection("DataSource=" + path))
-            {                
+            {
                 dbConn.Open();
                 using (SqliteTransaction transaction = dbConn.BeginTransaction())
                 {
-                    foreach (string tableName in tableNames)
-                    {                        
-                        string commandText = @"CREATE TABLE IF NOT EXISTS " + tableName + " (DateInt INTEGER PRIMARY KEY, Date TEXT, Open REAL, High REAL, Low REAL, Close REAL, Volume REAL, NumberOfTrades REAL, VWAP REAL)";
-                        SqliteCommand cmd = new SqliteCommand(commandText, dbConn, transaction);
+                    foreach (string command in commands)
+                    {
+                        SqliteCommand cmd = new SqliteCommand(command, dbConn, transaction);
                         cmd.ExecuteNonQuery();
                         cmd.Dispose();
                     }

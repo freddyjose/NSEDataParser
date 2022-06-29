@@ -14,9 +14,7 @@ namespace BhavCopyParser.DataBase
 
         bool CreateDBFileIfNotExists();
 
-        bool InitializeDBFile(List<string> tableNames);
-
-        bool ExecuteInsertTransaction(List<string> commands);
+        bool ExecuteTransaction(List<string> commands);
 
     }
 }
