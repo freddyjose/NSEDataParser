@@ -46,20 +46,22 @@ namespace BhavCopyParser.DataBase.Sqlite
         public bool InitializeDBFile(List<string> tableNames)
         {
             bool success = false;
-            using (SqliteConnection dbConn = new SqliteConnection(path))
+            using (SqliteConnection dbConn = new SqliteConnection("DataSource=" + path))
             {                
                 dbConn.Open();
                 using (SqliteTransaction transaction = dbConn.BeginTransaction())
                 {
                     foreach (string tableName in tableNames)
-                    {
-                        SqliteCommand cmd = new SqliteCommand();
-                        cmd.CommandText = @"CREATE TABLE IF NOT EXISTS '" + tableName + "'(DateInt INTEGER PRIMARY KEY, Date TEXT, Open REAL, High REAL, Low REAL, Close REAL, Volume REAL, NumberOfTrades REAL, VWAP REAL)";
+                    {                        
+                        string commandText = @"CREATE TABLE IF NOT EXISTS " + tableName + " (DateInt INTEGER PRIMARY KEY, Date TEXT, Open REAL, High REAL, Low REAL, Close REAL, Volume REAL, NumberOfTrades REAL, VWAP REAL)";
+                        SqliteCommand cmd = new SqliteCommand(commandText, dbConn, transaction);
                         cmd.ExecuteNonQuery();
+                        cmd.Dispose();
                     }
                     transaction.Commit();
                     success = true;
                 }
+                dbConn.Close();
             }
             return success;
         }
