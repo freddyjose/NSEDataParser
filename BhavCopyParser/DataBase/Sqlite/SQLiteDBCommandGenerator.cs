@@ -1,10 +1,5 @@
 ﻿using BhavCopyParser.BhavCopy.EquityBhavCopy;
 using BhavCopyParser.DataModels.EquityData;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BhavCopyParser.DataBase.Sqlite
 {

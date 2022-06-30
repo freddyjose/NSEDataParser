@@ -1,12 +1,8 @@
 ﻿using BhavCopyParser.DataBase.Sqlite;
 using Microsoft.Data.Sqlite;
 using NUnit.Framework;
-using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BhavCopyParser.Tests.DataBase.Sqlite
 {
