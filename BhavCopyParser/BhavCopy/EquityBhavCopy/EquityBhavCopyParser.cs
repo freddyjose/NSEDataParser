@@ -2,12 +2,7 @@
 using BhavCopyParser.DataModels.EquityData;
 using BhavCopyParser.DateParser;
 using Microsoft.VisualBasic.FileIO;
-using System;
-using System.Collections.Generic;
 using System.IO.Compression;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BhavCopyParser.BhavCopy.EquityBhavCopy
 {
