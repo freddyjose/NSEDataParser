@@ -14,6 +14,7 @@ namespace BhavCopyParser.Tests.DataBase.Sqlite
             SQLiteDBOperation dbOperation = new SQLiteDBOperation("data.db");
             bool res = dbOperation.CreateDBFileIfNotExists();
             Assert.IsTrue(res);
+            SqliteConnection.ClearAllPools();
             if (res)
                 File.Delete("data.db");
         }
