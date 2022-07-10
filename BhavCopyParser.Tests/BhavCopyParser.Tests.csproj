@@ -46,7 +46,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="DataFolder\" />
+    <Folder Include="DataFolder\NiftyComposition\" />
   </ItemGroup>
 
 </Project>
