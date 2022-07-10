@@ -8,6 +8,8 @@ namespace BhavCopyParser.DataModels.NiftyComposition
 {
     public class NiftyComponents
     {
-        public Dictionary<string, float> components = new Dictionary<string, float>();
+        public string Date;
+
+        public List<KeyValuePair<string, float>> components = new List<KeyValuePair<string, float>>();
     }
 }

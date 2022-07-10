@@ -1,11 +1,12 @@
 ﻿using BhavCopyParser.DataModels.EquityData;
+using BhavCopyParser.DataModels.NiftyComposition;
 using BhavCopyParser.Reports.BhavCopy.EquityBhavCopy;
 
 namespace BhavCopyParser.DataBase.Sqlite
 {
     public class SQLiteDBCommandGenerator
     {
-        public List<string> GetInitCommands(List<string> tableNames)
+        public List<string> GetInitCommandsForEquity(List<string> tableNames)
         {
             List<string> commands = new List<string>();
             foreach (string tableName in tableNames)
@@ -16,7 +17,7 @@ namespace BhavCopyParser.DataBase.Sqlite
             return commands;
         }
 
-        public List<string> GetInsertCommands(EquityBhavCopyParserOutput inputData)
+        public List<string> GetInsertCommandsForEquity(EquityBhavCopyParserOutput inputData)
         {
             List<string> commands = new List<string>();
             foreach (var input in inputData.data)
@@ -33,5 +34,25 @@ namespace BhavCopyParser.DataBase.Sqlite
             }
             return commands;
         }
+        
+        public List<string> GetInsertCommandsForNiftyComposition(List<NiftyComponents> niftyComponents)
+        {
+            List<string> commands = new List<string>();
+            foreach (NiftyComponents niftyComponent in niftyComponents)
+            {
+                string createStatement = @"CREATE TABLE IF NOT EXISTS '" + niftyComponent.Date + "'(Id INTEGER PRIMARY KEY, Symbol TEXT, Weightage REAL)";
+                commands.Add(createStatement);
+                string insertStatement = "INSERT INTO '" + niftyComponent.Date + "' (Symbol, Weightage) VALUES ";
+                List<KeyValuePair<string, float>> components = niftyComponent.components;
+                foreach (KeyValuePair<string, float> component in components)
+                {
+                    string valStr = component.Key + ", " + component.Value;
+                    insertStatement = insertStatement + ",(" + valStr + ")";
+                }                
+                commands.Add(insertStatement);
+            }
+            return commands;
+        }
+
     }
 }

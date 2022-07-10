@@ -40,13 +40,14 @@ namespace BhavCopyParser.Reports.NiftyComposition
                         string[] secondRow = csvParser.ReadFields();
                         string[] headerRow = csvParser.ReadFields();
                         NiftyComponents niftyData = new NiftyComponents();
+                        niftyData.Date = fileName.Substring(4, 5);
                         for(int i = 0; i < 50; i++)
                         {
                             string[] row = csvParser.ReadFields();
                             string symbol = row[1];
                             string weightageString = row[6];
                             float weightage = float.Parse(weightageString);
-                            niftyData.components.Add(symbol, weightage);
+                            niftyData.components.Add(new KeyValuePair<string, float>(symbol, weightage));
                         }
                         retVal.Add(niftyData);
                     }

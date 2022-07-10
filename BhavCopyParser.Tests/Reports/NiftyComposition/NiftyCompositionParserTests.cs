@@ -24,8 +24,8 @@ namespace BhavCopyParser.Tests.Reports.NiftyComposition
                 });
             NiftyCompositionParser OUT = new NiftyCompositionParser(fakeDirectoryOps.Object);
             List<NiftyComponents> result = OUT.GetNiftyComponents("jun22", "jun22", @"DataFolder\NiftyComposition");
-            Assert.AreEqual(0.7, result[0].components["ADANIPORTS"], 0.01);
-            Assert.AreEqual(0.54, result[0].components["APOLLOHOSP"], 0.01);
+            Assert.AreEqual(0.7, result[0].components[0].Value, 0.01);
+            Assert.AreEqual(0.54, result[0].components[1].Value, 0.01);
         }
     }
 }
