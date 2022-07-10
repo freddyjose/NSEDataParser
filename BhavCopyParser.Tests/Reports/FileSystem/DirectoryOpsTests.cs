@@ -3,7 +3,7 @@ using NUnit.Framework;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace BhavCopyParser.Tests.FileSystem
+namespace BhavCopyParser.Tests.Reports.FileSystem
 {
     public class DirectoryOpsTests
     {

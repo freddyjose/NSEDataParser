@@ -7,7 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="BhavCopy\FnoBhavCopy\" />
+    <Folder Include="Reports\FnoBhavCopy\" />
+    <Folder Include="Reports\NiftyComposition\" />
   </ItemGroup>
 
   <ItemGroup>

@@ -4,7 +4,7 @@ using BhavCopyParser.DateParser;
 using Microsoft.VisualBasic.FileIO;
 using System.IO.Compression;
 
-namespace BhavCopyParser.BhavCopy.EquityBhavCopy
+namespace BhavCopyParser.Reports.BhavCopy.EquityBhavCopy
 {
     public class EquityBhavCopyParser
     {

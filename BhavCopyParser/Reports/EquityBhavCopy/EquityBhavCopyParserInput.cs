@@ -1,5 +1,5 @@
 ﻿
-namespace BhavCopyParser.BhavCopy.EquityBhavCopy
+namespace BhavCopyParser.Reports.BhavCopy.EquityBhavCopy
 {
     public class EquityBhavCopyParserInput
     {

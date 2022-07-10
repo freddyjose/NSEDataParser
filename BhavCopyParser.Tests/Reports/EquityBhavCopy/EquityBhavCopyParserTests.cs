@@ -1,10 +1,10 @@
-﻿using BhavCopyParser.BhavCopy.EquityBhavCopy;
-using BhavCopyParser.BhavCopy.FileSystem;
+﻿using BhavCopyParser.BhavCopy.FileSystem;
+using BhavCopyParser.Reports.BhavCopy.EquityBhavCopy;
 using Moq;
 using NUnit.Framework;
 using System.Collections.Generic;
 
-namespace BhavCopyParser.Tests.EquityBhavCopy
+namespace BhavCopyParser.Tests.Reports.EquityBhavCopy
 {
     public class EquityBhavCopyParserTests
     {

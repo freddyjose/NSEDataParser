@@ -1,6 +1,6 @@
 ﻿using BhavCopyParser.DataModels.EquityData;
 
-namespace BhavCopyParser.BhavCopy.EquityBhavCopy
+namespace BhavCopyParser.Reports.BhavCopy.EquityBhavCopy
 {
     public class EquityBhavCopyParserOutput
     {
