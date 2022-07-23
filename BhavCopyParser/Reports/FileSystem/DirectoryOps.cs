@@ -20,7 +20,7 @@ namespace BhavCopyParser.BhavCopy.FileSystem
             DateTime endDate = DateTime.Parse(endDateString);
             List<string> retVal = new List<string>();
             foreach (KeyValuePair<DateTime, string> indexedFileName in indexedFileNames)
-    {
+            {
                 if(indexedFileName.Key >= startDate && indexedFileName.Key <= endDate)
                     retVal.Add(indexedFileName.Value);
             }
