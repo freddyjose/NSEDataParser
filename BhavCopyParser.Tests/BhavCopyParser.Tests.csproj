@@ -15,6 +15,9 @@
     <None Remove="DataFolder\EquityBhavCopy\cm25MAY2022bhav.csv.zip" />
     <None Remove="DataFolder\NiftyComposition\mcwb_jun22.zip" />
     <None Remove="DataFolder\NiftyComposition\mcwb_may22.zip" />
+    <None Remove="Reports\FnoBhavCopy\fo13JUN2022bhav.csv.zip" />
+    <None Remove="Reports\FnoBhavCopy\fo14JUN2022bhav.csv.zip" />
+    <None Remove="Reports\FnoBhavCopy\fo15JUN2022bhav.csv.zip" />
   </ItemGroup>
 
   <ItemGroup>
@@ -37,6 +40,15 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="DataFolder\NiftyComposition\mcwb_may22.zip">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DataFolder\FnoBhavCopy\fo13JUN2022bhav.csv.zip">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DataFolder\FnoBhavCopy\fo14JUN2022bhav.csv.zip">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DataFolder\FnoBhavCopy\fo15JUN2022bhav.csv.zip">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

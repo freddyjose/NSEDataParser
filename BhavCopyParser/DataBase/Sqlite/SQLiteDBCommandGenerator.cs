@@ -1,6 +1,7 @@
 ﻿using BhavCopyParser.DataModels.EquityData;
 using BhavCopyParser.DataModels.NiftyComposition;
 using BhavCopyParser.Reports.BhavCopy.EquityBhavCopy;
+using BhavCopyParser.Reports.FnoBhavCopy;
 
 namespace BhavCopyParser.DataBase.Sqlite
 {
@@ -51,6 +52,23 @@ namespace BhavCopyParser.DataBase.Sqlite
                 }                
                 commands.Add(insertStatement);
             }
+            return commands;
+        }
+
+        public List<string> GetInsertCommandsForOptions(FnOBhavCopyParserOutput fnoBhavCopyParserOutput)
+        {
+            List<string> commands = new List<string>();
+            string createCommand = @"CREATE TABLE IF NOT EXISTS " + fnoBhavCopyParserOutput.Date;
+            createCommand += " (Id INTEGER PRIMARY KEY, Symbol TEXT, ExpiryDate TEXT, StrkePrice REAL, Put INTEGER, Open REAL, High REAL, Low REAL, Close REAL, Volume REAL, TradedContracts REAL, AvgContractPrice REAL)";
+            commands.Add(createCommand);
+            string statement = "INSERT INTO '" + fnoBhavCopyParserOutput.Date + "' (Symbol, ExpiryDate, StrkePrice, Put, Open, High, Low, Close, Volume, TradedContracts, AvgContractPrice) VALUES ";
+            foreach (OptionRow optionRow in fnoBhavCopyParserOutput.OptionRows)
+            {
+                string valStr = optionRow.Symbol + ", " + optionRow.ExpiryDate + ", ";
+                valStr += optionRow.PutCall?"1":"0" + ", " + optionRow.Open + ", " + optionRow.High + ", " + optionRow.Low + ", " + optionRow.Close + ", " + optionRow.ValueTraded + ", " + optionRow.ContractsTraded + ", " + optionRow.AverageContractPrice;
+                statement = statement + ",(" + valStr + ")";
+            }
+            commands.Add(statement);
             return commands;
         }
 
